@@ -1,2 +1,3 @@
 #/bin/bash
-python3 src/ip.py
+
+python3 "${HOME}/tools/src/ip.py"
