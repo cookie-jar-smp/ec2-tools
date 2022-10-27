@@ -1,21 +1,16 @@
 # Minecraft Server
 
-This folder is for testing interaction with the Minecraft Server. Go to [PaperMC](https://papermc.io/downloads) & download the latest jar file and place it in the server sub-folder relative to this README.
+Contains the `scripts`/`startup daemons` to manage and automate the server
 
 ### Start
-Running `start.sh` will start the Minecraft Server as a background process.
-`bash
-bash start.sh
-`
+`start.sh` is run by [`mc.service`](https://github.com/cookie-jar-smp/ec2-tools/blob/main/server/src/services/mc.service)
+
 ### Execute A Server Command
 Running `execute.sh` with an argument will send it to `stdin` of the Minecraft Server.
 ```bash
 bash execute.sh {help | kill [player] | your command }
 ```
-I suggest running this with `tail -F out` so you can see the live output of your command
+I suggest running this with `tail -F out` so you can see the live output of your command.
 
 ### Stop
-This will clean up the `stdout` & `stdin` for the Minecraft Server & properly shut down the server.
-```bash
-bash execute.sh stop
-```
+You can send `stop` via `execute.sh` but I suggest deploy the [Cloud Functions](https://github.com/cookie-jar-smp/the-full-jar/tree/main/functions) to automatically stop the instance.
