@@ -2,6 +2,11 @@
 
 SERVER_DIRECTORY="${HOME}/server"
 PLUGIN_DIRECTORY="${SERVER_DIRECTORY}/plugins"
+LOGS_DIRECTORY="${SERVER_DIRECTORY}/logs"
+
+# Clear Old Logs
+cd $LOGS_DIRECTORY
+sudo rm -rf *.log.gz
 
 # Delete server.pipe
 cd $SERVER_DIRECTORY
